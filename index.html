@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Manipulation Practice by Overflow</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <img class="logo" src="overflow-logo.png" alt="Overflow Logo">
+  <h1>DOM Manipulation Practice</h1>
+  
+  <!-- Text Manipulation -->
+  <div class="demo-box">
+    <h2>Text Manipulation</h2>
+    <div class="control-panel">
+      <button id="changeTextBtn">Change Text</button>
+      <button id="resetTextBtn">Reset Text</button>
+    </div>
+    <div id="targetText">This is the original text</div>
+  </div>
+  
+  <!-- Style Manipulation -->
+  <div class="demo-box">
+    <h2>Style Manipulation</h2>
+    <div class="control-panel">
+      <button id="redBtn">Red</button>
+      <button id="blueBtn">Blue</button>
+      <button id="greenBtn">Green</button>
+      <button id="smallerBtn">Smaller</button>
+      <button id="largerBtn">Larger</button>
+      <button id="resetStyleBtn">Reset Style</button>
+      <div style="margin-top: 10px;">
+        <label for="colorPicker">Custom color: </label>
+        <input type="color" id="colorPicker">
+      </div>
+    </div>
+    <div id="styleTarget">Style changes will apply to this text</div>
+  </div>
+  
+  <!-- Element Visibility -->
+  <div class="demo-box">
+    <h2>Element Visibility</h2>
+    <div class="control-panel">
+      <button id="toggleVisibilityBtn">Show/Hide Element</button>
+    </div>
+    <div id="toggleElement">This element can be hidden and shown</div>
+  </div>
+  
+  <!-- Element Creation -->
+  <div class="demo-box">
+    <h2>Creating Elements</h2>
+    <div class="control-panel">
+      <button id="addElementBtn">Add New Element</button>
+      <button id="removeLastElementBtn">Remove Last Element</button>
+      <button id="clearElementsBtn">Clear All</button>
+    </div>
+    <div id="elementContainer"></div>
+  </div>
+  
+  <!-- Counter -->
+  <div class="demo-box">
+    <h2>Interactive Counter</h2>
+    <div class="control-panel">
+      <button id="decrementCounterBtn">-</button>
+      <button id="incrementCounterBtn">+</button>
+      <button id="resetCounterBtn">Reset</button>
+    </div>
+    <div id="counterValue">0</div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>

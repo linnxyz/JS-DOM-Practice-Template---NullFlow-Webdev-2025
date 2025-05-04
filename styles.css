@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 1.6;
+  }
+  
+  h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .logo {
+      display: block;
+      margin: 0 auto 20px;
+      max-width: 30%;
+      height: auto;
+  }
+  
+  .demo-box {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+  
+  .control-panel {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    background-color: #f67c3f;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    margin: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #e78c36;
+  }
+  
+  #colorPicker {
+    vertical-align: middle;
+  }
+  
+  #targetText {
+    font-size: 24px;
+    margin: 20px 0;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  #imageContainer {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  #demoImage {
+    max-width: 200px;
+    border: 3px solid #ddd;
+  }
+  
+  #counterValue {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 10px 0;
+    text-align: center;
+  }
+  
+  .hidden {
+    display: none;
+  }
