@@ -96,20 +96,3 @@ function resetCounter() {
 function updateCounter() {
 
 }
-
-
-// 6. Image Manipulation
-let imageRotation = 0;
-let currentImage = 1;
-
-function switchImage() {
-
-}
-
-function rotateImage() {
-
-}
-
-function resetImage() {
-
-}
