@@ -25,15 +25,7 @@ to make the everything work as intended.
 - Function: toggleVisibility()
   - Show or hide the div with id="toggleElement"
 
-## 4. Element Creation
-- Function: addElement()
-  - Create and add a new element inside id="elementContainer"
-- Function: removeLastElement()
-  - Remove the last added element
-- Function: clearElements()
-  - Remove all elements
-
-## 5. Counter
+## 4. Counter
 - Function: incrementCounter()
 - Function: decrementCounter()
 - Function: resetCounter()

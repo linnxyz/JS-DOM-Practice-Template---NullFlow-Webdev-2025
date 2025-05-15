@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Example 1: Text Manipulation - Change Text button
     const changeTextBtn = document.getElementById("changeTextBtn");
     changeTextBtn.addEventListener("click", changeText);
-  
+
     // Example 2: Counter - Increment button
     const incrementCounterBtn = document.getElementById("incrementCounterBtn");
     incrementCounterBtn.addEventListener("click", incrementCounter);
@@ -29,33 +29,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // 1. Text Manipulation
 function changeText() {
-
+  
 }
 
 function resetText() {
-
+  
 }
-
 
 // 2. Style Manipulation
 function changeColor(color) {
 
-
 }
-
-function resetStyle() {
-
-}
-
 
 // 3. Element Visibility
 function toggleVisibility() {
 
 }
 
-// 4. Counter
-let counter = 0;
-
+// 4. Counter  
 function incrementCounter() {
 
 }

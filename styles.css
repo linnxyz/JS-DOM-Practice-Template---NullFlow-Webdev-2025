@@ -47,10 +47,6 @@ body {
     background-color: #e78c36;
   }
   
-  #colorPicker {
-    vertical-align: middle;
-  }
-  
   #targetText {
     font-size: 24px;
     margin: 20px 0;
@@ -58,24 +54,9 @@ body {
     text-align: center;
   }
   
-  #imageContainer {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-  }
-  
-  #demoImage {
-    max-width: 200px;
-    border: 3px solid #ddd;
-  }
-  
   #counterValue {
     font-size: 36px;
     font-weight: bold;
     margin: 10px 0;
     text-align: center;
-  }
-  
-  .hidden {
-    display: none;
   }
