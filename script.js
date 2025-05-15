@@ -43,10 +43,6 @@ function changeColor(color) {
 
 }
 
-function changeFontSize(direction) {
-
-}
-
 function resetStyle() {
 
 }
@@ -57,28 +53,7 @@ function toggleVisibility() {
 
 }
 
-
-// 4. Element Creation
-let elementCount = 0;
-
-function addElement() {
-
-}
-
-function removeLastElement() {
-
-}
-
-function clearElements() {
-
-}
-
-function getRandomColor() {
-
-}
-
-
-// 5. Counter
+// 4. Counter
 let counter = 0;
 
 function incrementCounter() {
