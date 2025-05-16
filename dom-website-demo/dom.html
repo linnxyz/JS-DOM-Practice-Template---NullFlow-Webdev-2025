@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo - DOM Manipulation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    
+    h1 {
+      color: #2c3e50;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .logo {
+        display: block;
+        margin: 0 auto 20px;
+        max-width: 30%;
+        height: auto;
+    }
+    
+    .demo-box {
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+    
+    .control-panel {
+      background-color: #f8f9fa;
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    
+    button {
+      background-color: #f67c3f;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      margin: 5px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    button:hover {
+      background-color: #e78c36;
+    }
+    
+    #colorPicker {
+      vertical-align: middle;
+    }
+    
+    #targetText {
+      font-size: 24px;
+      margin: 20px 0;
+      padding: 10px;
+      text-align: center;
+    }
+    
+    #imageContainer {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+    
+    #demoImage {
+      max-width: 200px;
+      border: 3px solid #ddd;
+    }
+    
+    #counterValue {
+      font-size: 36px;
+      font-weight: bold;
+      margin: 10px 0;
+      text-align: center;
+    }
+    
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+    <img class="logo" src="overflow-logo.png" alt="Overflow Logo">
+    <h1>NullFlow DOM Manipulation Demo</h1>
+  
+  <!-- Text Manipulation Demo -->
+    <div class="demo-box">
+    <h2>Text Manipulation</h2>
+    <div class="control-panel">
+      <button onclick="changeText()">Change Text</button>
+      <button onclick="resetText()">Reset Text</button>
+    </div>
+    <div id="targetText">This is the original text</div>
+  </div>
+  
+  <!-- Style Manipulation Demo -->
+  <div class="demo-box">
+    <h2>Style Manipulation</h2>
+    <div class="control-panel">
+      <button onclick="changeColor('red')">Red</button>
+      <button onclick="changeColor('blue')">Blue</button>
+      <button onclick="changeColor('green')">Green</button>
+      <button onclick="changeFontSize('smaller')">Smaller</button>
+      <button onclick="changeFontSize('larger')">Larger</button>
+      <button onclick="resetStyle()">Reset Style</button>
+      <div style="margin-top: 10px;">
+        <label for="colorPicker">Custom color: </label>
+        <input type="color" id="colorPicker" onchange="changeColor(this.value)">
+      </div>
+    </div>
+    <div id="styleTarget">Style changes will apply to this text</div>
+  </div>
+  
+  <!-- Element Visibility Demo -->
+  <div class="demo-box">
+    <h2>Element Visibility</h2>
+    <div class="control-panel">
+      <button onclick="toggleVisibility()">Show/Hide Element</button>
+    </div>
+    <div id="toggleElement">This element can be hidden and shown</div>
+  </div>
+  
+  <!-- Element Creation Demo -->
+  <div class="demo-box">
+    <h2>Creating Elements</h2>
+    <div class="control-panel">
+      <button onclick="addElement()">Add New Element</button>
+      <button onclick="removeLastElement()">Remove Last Element</button>
+      <button onclick="clearElements()">Clear All</button>
+    </div>
+    <div id="elementContainer"></div>
+  </div>
+  
+  <!-- Counter Demo -->
+  <div class="demo-box">
+    <h2>Interactive Counter</h2>
+    <div class="control-panel">
+      <button onclick="decrementCounter()">-</button>
+      <button onclick="incrementCounter()">+</button>
+      <button onclick="resetCounter()">Reset</button>
+    </div>
+    <div id="counterValue">0</div>
+  </div>
+  
+  <!-- Image Manipulation Demo -->
+  <div class="demo-box">
+    <h2>Image Manipulation</h2>
+    <div class="control-panel">
+      <button onclick="switchImage()">Switch Image</button>
+      <button onclick="rotateImage()">Rotate Image</button>
+      <button onclick="resetImage()">Reset Image</button>
+    </div>
+    <div id="imageContainer">
+      <img id="demoImage" src="/api/placeholder/200/200" alt="Demo image">
+    </div>
+  </div>
+  
+  <script>
+    // Text Manipulation Functions
+    function changeText() {
+      document.getElementById("targetText").textContent = "Text changed by JavaScript!";
+    }
+    
+    function resetText() {
+      document.getElementById("targetText").textContent = "This is the original text";
+    }
+    
+    // Style Manipulation Functions
+    function changeColor(color) {
+      document.getElementById("styleTarget").style.color = color;
+    }
+    
+    function changeFontSize(direction) {
+      const element = document.getElementById("styleTarget");
+      const currentSize = window.getComputedStyle(element).fontSize;
+      const currentSizeValue = parseFloat(currentSize);
+      
+      if (direction === 'larger') {
+        element.style.fontSize = (currentSizeValue + 2) + 'px';
+      } else {
+        element.style.fontSize = (currentSizeValue - 2) + 'px';
+      }
+    }
+    
+    function resetStyle() {
+      const element = document.getElementById("styleTarget");
+      element.style.color = '';
+      element.style.fontSize = '';
+    }
+    
+    // Element Visibility Functions
+    function toggleVisibility() {
+      const element = document.getElementById("toggleElement");
+      if (element.style.display === "none") {
+        element.style.display = "block";
+      } else {
+        element.style.display = "none";
+      }
+    }
+    
+    // Element Creation Functions
+    let elementCount = 0;
+    
+    function addElement() {
+      elementCount++;
+      const container = document.getElementById("elementContainer");
+      const newElement = document.createElement("p");
+      newElement.textContent = `New element #${elementCount}`;
+      newElement.style.backgroundColor = getRandomColor();
+      newElement.style.padding = "10px";
+      newElement.style.marginBottom = "5px";
+      newElement.style.borderRadius = "4px";
+      container.appendChild(newElement);
+    }
+    
+    function removeLastElement() {
+      const container = document.getElementById("elementContainer");
+      if (container.lastChild) {
+        container.removeChild(container.lastChild);
+        elementCount--;
+      }
+    }
+    
+    function clearElements() {
+      document.getElementById("elementContainer").innerHTML = "";
+      elementCount = 0;
+    }
+    
+    function getRandomColor() {
+      const letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+    
+    // Counter Functions
+    let counter = 0;
+    
+    function incrementCounter() {
+      counter++;
+      updateCounter();
+    }
+    
+    function decrementCounter() {
+      counter--;
+      updateCounter();
+    }
+    
+    function resetCounter() {
+      counter = 0;
+      updateCounter();
+    }
+    
+    function updateCounter() {
+      document.getElementById("counterValue").textContent = counter;
+    }
+    
+    // Image Manipulation Functions
+    let imageRotation = 0;
+    let currentImage = 1;
+    
+    function switchImage() {
+      currentImage = currentImage === 1 ? 2 : 1;
+      const imageWidth = currentImage === 1 ? 200 : 250;
+      const imageHeight = currentImage === 1 ? 200 : 150;
+      document.getElementById("demoImage").src = `https://api.algobook.info/v1/randomimage?category=computer&width=${imageWidth}&height=${imageHeight}`;
+    }
+    
+    function rotateImage() {
+      imageRotation += 90;
+      if (imageRotation >= 360) {
+        imageRotation = 0;
+      }
+      document.getElementById("demoImage").style.transform = `rotate(${imageRotation}deg)`;
+    }
+    
+    function resetImage() {
+      imageRotation = 0;
+      currentImage = 1;
+      document.getElementById("demoImage").src = "/api/placeholder/200/200";
+      document.getElementById("demoImage").style.transform = "";
+    }
+  </script>
+</body>
+</html>
